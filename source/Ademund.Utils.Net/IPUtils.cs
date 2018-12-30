@@ -8,7 +8,7 @@ namespace Ademund.Utils.Net
 {
     public class IPUtils
     {
-        private static readonly string[] checkIPUrls =
+        private static readonly string[] _checkIPUrls =
             {
                 "https://api.ipify.org",
                 "https://bot.whatismyipaddress.com/",
@@ -29,9 +29,9 @@ namespace Ademund.Utils.Net
         /// </summary>
         /// <param name="proxyAddress">Optional proxy address, e.g. 127.0.0.1:8888</param>
         /// <returns>A string representation of an IP Address, or null if no valid responses are received</returns>
-        public static string GetExternalIPAddress(string proxyAddress = null)
+        public static string GetExternalIPAddress(string proxyAddress = null, string[] checkIPUrls = null, int failDelay = 3000)
         {
-            return GetExternalIPAddressAsync(proxyAddress).GetAwaiter().GetResult();
+            return GetExternalIPAddressAsync(proxyAddress, checkIPUrls, failDelay).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Ademund.Utils.Net
         /// </summary>
         /// <param name="proxyAddress">Optional proxy address, e.g. 127.0.0.1:8888</param>
         /// <returns>A string representation of an IP Address, or null if no valid responses are received</returns>
-        public static async Task<string> GetExternalIPAddressAsync(string proxyAddress = null)
+        public static async Task<string> GetExternalIPAddressAsync(string proxyAddress = null, string[] checkIPUrls = null, int failDelay = 3000)
         {
             var cts = new CancellationTokenSource();
             var tasks = new List<Task<string>>();
@@ -52,9 +52,9 @@ namespace Ademund.Utils.Net
             IWebProxy proxy = string.IsNullOrWhiteSpace(proxyAddress) ? null : new WebProxy(proxyAddress);
             using (var client = new HttpClient(new HttpClientHandler() { Proxy = proxy, UseProxy = (proxy != null) }))
             {
-                foreach (var url in checkIPUrls)
+                foreach (var url in checkIPUrls ?? _checkIPUrls)
                 {
-                    tasks.Add(CheckIP(client, url, cts.Token));
+                    tasks.Add(CheckIP(client, url, cts.Token, failDelay));
                 }
 
                 var result = await await Task.WhenAny(tasks).ConfigureAwait(false);
@@ -67,7 +67,7 @@ namespace Ademund.Utils.Net
             }
         }
 
-        private static async Task<string> CheckIP(HttpClient client, string url, CancellationToken ct)
+        private static async Task<string> CheckIP(HttpClient client, string url, CancellationToken ct, int failDelay = 3000)
         {
             try
             {
@@ -84,8 +84,15 @@ namespace Ademund.Utils.Net
             {
             }
 
-            // if we didn't get a valid response then wait to return to allow the other requests a chance to finish
-            await Task.Delay(5000, ct).ConfigureAwait(false);
+            try
+            {
+                // if we didn't get a valid response then wait to return to allow the other requests a chance to finish
+                await Task.Delay(failDelay, ct).ConfigureAwait(false);
+            }
+            catch (TaskCanceledException)
+            {
+            }
+
             return null;
         }
     }
