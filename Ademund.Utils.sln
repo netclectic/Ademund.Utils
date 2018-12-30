@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{0746C547
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C08D787E-E4E6-4F1E-B109-0FF987DFB8FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ademund.Utils.Net.Tests", "Ademund.Utils.Net.Tests\Ademund.Utils.Net.Tests.csproj", "{A86AE113-8E65-48FE-8500-CF7F54847D75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ademund.Utils.Net.Tests", "tests\Ademund.Utils.Net.Tests\Ademund.Utils.Net.Tests.csproj", "{A86AE113-8E65-48FE-8500-CF7F54847D75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
