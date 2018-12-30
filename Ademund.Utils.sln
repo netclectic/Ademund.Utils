@@ -13,7 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{0746C547
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C08D787E-E4E6-4F1E-B109-0FF987DFB8FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ademund.Utils.Net.Tests", "tests\Ademund.Utils.Net.Tests\Ademund.Utils.Net.Tests.csproj", "{A86AE113-8E65-48FE-8500-CF7F54847D75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ademund.Utils.Net.Tests", "tests\Ademund.Utils.Net.Tests\Ademund.Utils.Net.Tests.csproj", "{A86AE113-8E65-48FE-8500-CF7F54847D75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ademund.Utils.General", "source\Ademund.Utils.General\Ademund.Utils.General.csproj", "{06C9DABE-7F7F-4DA2-A56E-8E97AAE82D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ademund.Utils.WinForms", "source\Ademund.Utils.WinForms\Ademund.Utils.WinForms.csproj", "{442F2B80-00C6-45B6-B686-9CC031BC87E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ademund.Utils.Xml", "source\Ademund.Utils.Xml\Ademund.Utils.Xml.csproj", "{A2E7B1BD-4EFB-4AB5-B0A0-1324AD21DAD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +37,18 @@ Global
 		{A86AE113-8E65-48FE-8500-CF7F54847D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A86AE113-8E65-48FE-8500-CF7F54847D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A86AE113-8E65-48FE-8500-CF7F54847D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C9DABE-7F7F-4DA2-A56E-8E97AAE82D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C9DABE-7F7F-4DA2-A56E-8E97AAE82D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C9DABE-7F7F-4DA2-A56E-8E97AAE82D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C9DABE-7F7F-4DA2-A56E-8E97AAE82D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{442F2B80-00C6-45B6-B686-9CC031BC87E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{442F2B80-00C6-45B6-B686-9CC031BC87E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{442F2B80-00C6-45B6-B686-9CC031BC87E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{442F2B80-00C6-45B6-B686-9CC031BC87E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E7B1BD-4EFB-4AB5-B0A0-1324AD21DAD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E7B1BD-4EFB-4AB5-B0A0-1324AD21DAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E7B1BD-4EFB-4AB5-B0A0-1324AD21DAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E7B1BD-4EFB-4AB5-B0A0-1324AD21DAD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +57,9 @@ Global
 		{110B4FED-79B4-4B2F-B6B4-DF0E621EEF4C} = {031FF1B0-1250-4B11-B1E2-B5C9B285BAD7}
 		{7EE62C42-72D2-4B18-87C2-0C76DF91A0D0} = {0746C547-DB7B-4991-B02B-8AE12B687AB4}
 		{A86AE113-8E65-48FE-8500-CF7F54847D75} = {C08D787E-E4E6-4F1E-B109-0FF987DFB8FA}
+		{06C9DABE-7F7F-4DA2-A56E-8E97AAE82D83} = {031FF1B0-1250-4B11-B1E2-B5C9B285BAD7}
+		{442F2B80-00C6-45B6-B686-9CC031BC87E3} = {031FF1B0-1250-4B11-B1E2-B5C9B285BAD7}
+		{A2E7B1BD-4EFB-4AB5-B0A0-1324AD21DAD8} = {031FF1B0-1250-4B11-B1E2-B5C9B285BAD7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B1DAB47-BD65-46B2-8C94-6821D5074728}
