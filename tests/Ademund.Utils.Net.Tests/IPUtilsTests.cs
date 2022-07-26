@@ -12,7 +12,7 @@ namespace Ademund.Utils.Net.Tests
         [InlineData(8)]
         public void GetExternalIPAddress_Responds_With_A_Valid_IPAddress(int testNum)
         {
-            using (var server = FluentMockServer.Start())
+            using (var server = WireMockServer.Start())
             {
                 var urls = new List<string>(testNum);
                 for (int i = 1; i < testNum + 1; i++)
@@ -33,7 +33,7 @@ namespace Ademund.Utils.Net.Tests
         [InlineData(7, 8)]
         public void GetExternalIPAddress_Does_Not_Throw_If_Requests_Fail(int failingTestsNum, int passingTest)
         {
-            using (var server = FluentMockServer.Start())
+            using (var server = WireMockServer.Start())
             {
                 var urls = new List<string>(failingTestsNum);
                 for (int i = 1; i < failingTestsNum + 1; i++)
@@ -58,7 +58,7 @@ namespace Ademund.Utils.Net.Tests
         [InlineData(8)]
         public void GetExternalIPAddress_Returns_Null_If_All_Requests_Fail(int failingTestsNum)
         {
-            using (var server = FluentMockServer.Start())
+            using (var server = WireMockServer.Start())
             {
                 var urls = new List<string>(failingTestsNum);
                 for (int i = 1; i < failingTestsNum + 1; i++)

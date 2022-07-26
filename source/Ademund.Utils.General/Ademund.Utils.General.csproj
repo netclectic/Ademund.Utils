@@ -17,8 +17,8 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AgileObjects.AgileMapper" Version="1.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="AgileObjects.AgileMapper" Version="1.8.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'NET472'" />
   </ItemGroup>
 
